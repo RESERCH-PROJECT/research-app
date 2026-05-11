@@ -5,7 +5,8 @@ on:
 
 jobs:
   deploy:
-    runs-on: self-hosted  # <--- This targets your local machine
+    runs-on: self-hosted
     steps:
       - name: Run the deploy script
-        run: bash ~/projs_etc/kareem_sir_research_app/deploy.sh
+        # The '-l' flag stands for "login shell"
+        run: bash -l ~/projs_etc/kareem_sir_research_app/deploy.sh
