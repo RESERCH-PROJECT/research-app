@@ -29,7 +29,7 @@ os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 converter = DocumentConverter()
 
 
-@app.post("/api/upload")
+@app.post("/upload")
 async def upload_pdf(
     file: UploadFile = File(...)
 ):
