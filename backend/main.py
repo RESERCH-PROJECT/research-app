@@ -98,4 +98,4 @@ async def download_results():
     )
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000, timeout_keep_alive=3000, limit_concurrency=5)
+    uvicorn.run(app, host="0.0.0.0", port=8000, timeout_keep_alive=3000)
