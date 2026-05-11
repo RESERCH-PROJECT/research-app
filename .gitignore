@@ -18,3 +18,7 @@ input_pdfs/
 
 # Model caches
 .cache/
+
+actions-runner
+.gitignore
+ignore
