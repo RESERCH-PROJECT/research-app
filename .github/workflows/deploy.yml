@@ -1,0 +1,11 @@
+name: Local Self-Hosted Deploy
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: self-hosted  # <--- This targets your local machine
+    steps:
+      - name: Run the deploy script
+        run: bash ~/projs_etc/kareem_sir_research_app/deploy.sh
