@@ -1,7 +1,7 @@
 import os
 import shutil
 import zipfile
-
+import uvicorn
 import pandas as pd
 
 from fastapi import FastAPI, UploadFile, File
@@ -127,3 +127,5 @@ async def upload_pdf(
         media_type="application/zip",
         filename="tables.zip"
     )
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
