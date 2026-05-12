@@ -15,7 +15,7 @@ input_pdfs/
 
 # Env
 .env
-
+deploy.sh
 # Model caches
 .cache/
 
