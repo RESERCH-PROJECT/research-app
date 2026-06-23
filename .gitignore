@@ -22,3 +22,7 @@ deploy.sh
 actions-runner
 .gitignore
 ignore
+
+# Databases
+*.db
+*.sqlite
