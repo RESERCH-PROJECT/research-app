@@ -17,8 +17,15 @@ RUN if [ "$ENABLE_GPU" = "true" ]; then \
     && rm -rf /var/lib/apt/lists/*; \
     fi
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Install base dependencies (fast, rarely changes)
+COPY requirements-base.txt .
+RUN pip install --no-cache-dir -r requirements-base.txt
+
+# Install ML dependencies (slow, infrequently changes)
+COPY requirements-ml.txt .
+RUN pip install --no-cache-dir -r requirements-ml.txt
+
+# Copy application code last (changes frequently, doesn't invalidate pip cache)
 COPY . .
 
 CMD ["python", "main.py"]
